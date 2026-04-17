@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-top: 60px;
+            flex-direction: column;
+
+
+        }
+
+        .box {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 1px solid black;
+            flex-direction: column;
+        }
+
+        .row1 {
+            display: flex;
+            margin-bottom: -20px;
+            height: 50px;
+        }
+        .row2 {
+            display: flex;
+            margin-bottom: -20px;
+            height: 100px;
+        }
+
+        .left {
+            margin-right: 20px;
+        }
+        .left2 {
+            margin-right: 20px;
+        }
+        
+        input {
+            height: 60px;
+            width: 100%;
+        }
+
+        button {
+            height: 100px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        select {
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Convert</h2>
+        <form action="/submit" method="POST">
+            <div class="row1">
+                <div class="left">
+                    <select name="from" id="from-menu">
+                        {% for key, value in dict.items() %}
+                            <option value="{{key}}">{{key}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="right">
+                    <select name="to" id="to-menu">
+                        {% for key, value in dict.items() %}
+                            <option value="{{key}}">{{key}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="left2">
+                    <input type="number" name="from-am" id="first" placeholder="Enter amount">
+                </div>
+                <!-- <div class="right2">
+                    <input type="search" name="to-am" id="second" placeholder="Enter amount">
+                </div> -->
+            </div>
+            <button type="submit">Convert</button>
+        </form>
+
+    </div>
+
+    
+
+
+</body>
+</html>
